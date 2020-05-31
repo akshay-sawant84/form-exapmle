@@ -9,13 +9,18 @@ function selectedItem(value) {
 function myFunction() {
     var x = document.getElementById("myText").value;
     document.getElementById("demo").innerHTML = x;
+    document.getElementById("myText").value = '';
 }
 
 var counter = 0;
 var takeNumber = document.getElementById("submitBtn");
 takeNumber.addEventListener("click", function() {
-    counter = parseInt(document.getElementById("number").value);
-    document.getElementById("counter").innerHTML = counter;
+    if (document.getElementById("number").value === '') {
+        counter = 0;
+    } else {
+        counter = parseInt(document.getElementById("number").value);
+        document.getElementById("counter").innerHTML = counter;
+    }
 });
 
 var addition = document.getElementById("add");
